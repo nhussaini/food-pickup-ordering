@@ -1,0 +1,1 @@
+INSERT INTO orders (name, type, price, thumbnail_url, description, time) VALUES ('Cheesecake', 'Dessert', 6, 'photo of cheesecake', '1 slice of plain cheesecake', 5);
