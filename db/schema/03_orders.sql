@@ -7,5 +7,5 @@ CREATE TABLE orders (
   ready_at TIMESTAMP,
   order_status VARCHAR(255) NOT NULL,
   completed_at TIMESTAMP,
-  total_price DECIMAL(10,2) NOT NULL,
+  price DECIMAL(10,2) NOT NULL
 );
