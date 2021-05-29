@@ -1,1 +1,3 @@
-INSERT INTO orders (name, type, price, thumbnail_url, description, time) VALUES ('Cheesecake', 'Dessert', 6, 'photo of cheesecake', '1 slice of plain cheesecake', 5);
+INSERT INTO orders (user_id, ordered_at, ready_at, order_status, completed_at, total_price) VALUES (1, '2021-05-26 12:00:01', '2021-05-26 12:20:01', 'order status', '2021-05-26 12:00:01', 18);
+INSERT INTO orders (user_id, ordered_at, ready_at, order_status, completed_at, total_price) VALUES (2, '2021-05-26 14:00:01', '2021-05-26 14:10:01', 'order status', '2021-05-26 14:30:01', 5.99);
+INSERT INTO orders (user_id, ordered_at, ready_at, order_status, completed_at, total_price) VALUES (3, '2021-05-26 12:00:01', '2021-05-26 12:10:01', 'order status', '2021-05-26 12:10:01', 6);
