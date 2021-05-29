@@ -5,5 +5,5 @@ CREATE TABLE order_food (
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
   food_id INTEGER REFERENCES food(id) ON DELETE CASCADE,
   quantity INTEGER NOT NULL,
-  total_price DECIMAL(10,2) NOT NULL
+  price DECIMAL(10,2) NOT NULL
 );
