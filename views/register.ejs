@@ -26,11 +26,18 @@
     ></script>
     <div class="box">
       <div class="container">
-        <form action="register" method="POST">
-          <label class="label-username" for="email"><b>Email</b></label>
+        <form action="/api/register" method="POST">
+          <label class="label-name" for="name"><b>Name</b></label>
+          <input type="text" placeholder="Enter name..." name="name" />
+
+          <label class="label-email" for="email"><b>Email</b></label>
           <input type="text" placeholder="Enter email..." name="email" />
+
           <label class="label-password" for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password..." name="psw" />
+          <input type="password" placeholder="Enter Password..." name="password" />
+
+          <label class="label-number" for="number"><b>Phone Number</b></label>
+          <input type="text" placeholder="Enter phone number..." name="phone_number" />
           <button type="submit"><strong>Register</strong></button>
         </form>
       </div>
