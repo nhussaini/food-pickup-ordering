@@ -3,7 +3,12 @@
   <head>
     <title>Login</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/login.css" type="text/css" />
@@ -16,11 +21,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <div class="box">
           <div class="container">
-          <label class="label-username" for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username..." name="uname">
+            <form action="login" method="POST">
+          <label class="label-username" for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter email..." name="email">
           <label class="label-password" for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password..." name="psw">
+          <input type="password" placeholder="Enter Password..." name="psw" />
           <button type="submit"><strong>Login</strong></button>
+        </form>
         </div>
     </div>
   </body>
