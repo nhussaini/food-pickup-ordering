@@ -37,6 +37,7 @@ const usersRoutes = require("./routes/users");
 const loginRoutes = require("./routes/login");
 const indexRoutes = require("./routes/index");
 const registerRoutes = require("./routes/register");
+//const ordersRoutes = require("./routes/orders");
 
 
 // Mount all resource routes
@@ -45,6 +46,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/login", loginRoutes(db));
 app.use("/api/index", indexRoutes(db));
 app.use("/api/register", registerRoutes(db));
+//app.use("/api/orders", ordersRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
@@ -54,10 +56,6 @@ app.use("/api/register", registerRoutes(db));
 app.get("/", (req, res) => {
   res.render("index");
 });
-
-// app.get("/login", (req, res) => {
-//   res.render("login");
-// });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
