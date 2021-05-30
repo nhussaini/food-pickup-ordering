@@ -2,11 +2,12 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/login", (req, res) => {
+  router.get("/", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
-        res.json({ users });
+        const templateVars = {users}
+        res.render('login', templateVars);
       })
       .catch(err => {
         res
