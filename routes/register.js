@@ -15,5 +15,10 @@ module.exports = (db) => {
     //   });
     res.render('register');
   });
+
+  router.post("/", (req, res) => {
+    res.redirect("/");
+  });
+  
   return router;
 };
