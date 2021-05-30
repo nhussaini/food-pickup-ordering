@@ -41,7 +41,7 @@ const indexRoutes = require("./routes/index");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/login", loginRoutes(db));
-app.use("/api/index1", indexRoutes(db));
+app.use("/api/index", indexRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
