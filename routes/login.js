@@ -15,5 +15,10 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.post("/", (req, res) => {
+    //redirect to homepage for now but has to change to order now page when its made
+    res.redirect("/")
+  });
   return router;
 };
