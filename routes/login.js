@@ -6,7 +6,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
-        const templateVars = {users}
+        const templateVars = {users};
         res.render('login', templateVars);
       })
       .catch(err => {
@@ -15,11 +15,11 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  
+
   router.post("/", (req, res) => {
     res.redirect("/");
   });
-  
+
   return router;
 
 
