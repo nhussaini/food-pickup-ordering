@@ -7,12 +7,24 @@ body {
     padding-top: 5em;
     color: #ffffff;
   }
-  .container {
-    width: 40%;
 
+// beige box
+  .box {
+    background-color: rgb(245, 244, 224);
+    border-radius: 40px;
+    width: 40%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+  
+  .container {
+    width: 70%;
+
+    //username and password forms
     input[type=text], input[type=password] {
       width: 100%;
       padding: 12px 20px;
+      
       margin: 7px 0;
       margin-bottom: 1.5em;
       display: inline-block;
@@ -20,43 +32,26 @@ body {
       box-sizing: border-box;
     }
     
-    .label-username, .label-password {
-      color: white;
+    .label-username {
+      color: black;
       margin-top: 2em;
     }
 
-    button {
-      background-color: white;
-      border: none;
-      text-align: center;
-      padding: 9px 25px;
-      display: inline-block;
-      transform: translateX(275%)
+    .label-password {
+      color: black;
+      margin-top: 0em;
     }
 
-  
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 13px;
+      text-align: center;
+      padding: 9px 25px;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
   }
-
-  // form {
-  //   display: flex;
-  //   justify-content: center;
-  // }
-
-  // .label-username {
-  //   color: white;
-  //   padding-right: 2em;
-  // }
-
-  // .username {
-  //     display: flex;
-  //     justify-content: flex-start;
-  //     padding-top: 3em;
-  //     padding-bottom: 1em;
-  //     color: white;
-  // }
-
-  // .label-password {
-  //   color: white;
-  //   padding-right: 2em;
-  // }
 }
