@@ -1,0 +1,62 @@
+
+body {
+  background-color: black;
+
+  h1 {
+    text-align: center;
+    padding-top: 5em;
+    color: #ffffff;
+  }
+
+// beige box
+  .box {
+    background-color: rgb(245, 244, 224);
+    border-radius: 40px;
+    width: 40%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+  
+  .container {
+    width: 70%;
+
+    //username and password forms
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      
+      margin: 7px 0;
+      margin-bottom: 1.5em;
+      display: inline-block;
+      border: none;
+      box-sizing: border-box;
+    }
+    
+    .label-username {
+      color: black;
+      margin-top: 2em;
+    }
+
+    .label-password {
+      color: black;
+      margin-top: 0em;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 11px;
+      text-align: center;
+      padding: 9px 25px;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+
+    button:hover {
+      background-color: rgb(219, 217, 166);
+      color: black;
+    }
+  }
+}
