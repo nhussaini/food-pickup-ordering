@@ -16,9 +16,43 @@
 
     <%-include('partials/header') %>
 
-    <ul>
-      <% for (let food in food) { %>
+    <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
+      <div class="card-header"> Appetizers </div>
+      <div class="card-body">
+        <h5 class="card-title">Warning card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
 
+    <ul>
+      <% for (let item of food) { %>
+        <% if (item.type === 'Appetizer') { %>
+          <li> <%= item.name %>  </li>
+        <% } %>
+      <% } %>
+    </ul>
+
+    <ul>
+      <% for (let item of food) { %>
+        <% if (item.type === 'Main Dish') { %>
+          <li> <%= item.name %>  </li>
+        <% } %>
+      <% } %>
+    </ul>
+
+    <ul>
+      <% for (let item of food) { %>
+        <% if (item.type === 'Drink') { %>
+          <li> <%= item.name %>  </li>
+        <% } %>
+      <% } %>
+    </ul>
+
+    <ul>
+      <% for (let item of food) { %>
+        <% if (item.type === 'Dessert') { %>
+          <li> <%= item.name %>  </li>
+        <% } %>
       <% } %>
     </ul>
 
