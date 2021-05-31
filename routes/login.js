@@ -1,10 +1,7 @@
 const express = require('express');
-const app        = express();
 const router  = express.Router();
-const bodyParser = require("body-parser");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //get /api/login route
@@ -26,6 +23,7 @@ module.exports = (db) => {
 
       //if the password matches, redirect to "/"
       if (bcrypt.compareSync(password, user.password)) {
+        req.session['user_id'] = user.id;
         return res.redirect("/");
       }
       //if the passwords don't match, send the error object to the /api/login
