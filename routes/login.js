@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const bcrypt = require('bcrypt');
+
 const saltRounds = 10;
 
 
@@ -22,10 +22,7 @@ module.exports = (db) => {
       const user = data.rows[0];
 
       //if the password matches, redirect to "/"
-      if (bcrypt.compareSync(password, user.password)) {
-        req.session['user_id'] = user.id;
-        return res.redirect("/");
-      }
+     
       //if the passwords don't match, send the error object to the /api/login
       const templateVars = {status: 'error', message: 'Your email or password is wrong'};
       res.render('login', templateVars);

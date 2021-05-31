@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
 
@@ -17,7 +17,7 @@ module.exports = (db) => {
     //console.log(req.body)
     //const addUser = [req.body.name, req.body.email, req.body.password, req.body.phone_number];
     const { name, email, password, phone_number} = req.body;
-    const hashedPassword = bcrypt.hashSync(password, saltRounds);
+    // const hashedPassword = bcrypt.hashSync(password, saltRounds);
     let params = [name, email, hashedPassword, phone_number];
     // return db.query(`SELECT * from users;`)
     // .then(data=>{
