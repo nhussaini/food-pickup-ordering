@@ -39,8 +39,12 @@
 }
 
 .menu-container {
-  height: 80vh;
+  height: 120vh;
   text-align: center;
+
+  h1 {
+    margin: 4% 0 4% 0;
+  }
 
   ul {
     padding: 0;
@@ -48,6 +52,18 @@
 
   li {
     list-style: none;
+  }
+
+  .card {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    margin-right: 0 !important;
+
+    p {
+      display: flex;
+      flex-direction: row;
+    }
   }
 }
 

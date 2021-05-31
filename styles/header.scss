@@ -2,8 +2,11 @@
 
   .navbar {
     display: flex;
-  }
 
+    .navbar-brand {
+      color: white;
+    }
+  }
 }
 
 .button-container {
