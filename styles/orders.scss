@@ -1,0 +1,53 @@
+// styling for order page
+
+body {
+  background-color: black;
+
+  .page-title {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 5em;
+
+    i {
+      font-size: 22px;
+    }
+  }
+
+  .box {
+    background-color: rgb(245, 244, 224);
+    border-radius: 40px;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+    padding-right: 2em;
+    padding-left: 3em;
+  }
+
+  p {
+    color: black;
+  }
+
+  .plus {
+    border: none;
+    background-color: black;
+    color: white;
+    float: right;
+    margin-right: 0.5em;
+    padding: 0.3em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .minus {
+    border: none;
+    background-color: black;
+    color: white;
+    float: right;
+    margin-right: 0.5em;
+    padding: 0.3em;
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+  }
+}
