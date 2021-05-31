@@ -6,7 +6,6 @@ module.exports = (db) => {
     db.query(`SELECT * FROM food;`)
       .then((foodItems) => {
         const food = foodItems.rows;
-        //console.log('food', food);
         const templateVars = { food };
 
         res.render("orders", templateVars);
