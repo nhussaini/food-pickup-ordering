@@ -94,6 +94,13 @@ body {
       text-align: start;
     }
 
+    //images of food
+    .food-img {
+      width: 200px;
+      height: 170px;
+      border-radius: 30px;
+      object-fit: cover;
+    }
     //price of food
     .card-price {
       padding: 0em;
