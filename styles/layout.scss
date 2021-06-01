@@ -42,6 +42,9 @@
   }
 }
 
+body {
+  background-color: #121212 !important;
+
 .menu-container {
   height: 120vh;
   text-align: center;
@@ -60,6 +63,11 @@
 
   li {
     list-style: none;
+  }
+
+
+  .col-md-6 {
+    background-color: #121212;
   }
 
   .card {
@@ -104,8 +112,11 @@
     }
   }
 }
+}
 
 .menu-footer {
   height: 20vh;
   background-color: black;
 }
+
+
