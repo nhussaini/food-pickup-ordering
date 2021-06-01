@@ -43,14 +43,14 @@
 }
 
 body {
-  background-color: #141414 !important;
+  background-color: #1a1a1a !important;
 
 .menu-container {
   height: 120vh;
   text-align: center;
   color: white;
   //background-color: black;
-  background-color: #141414;
+  background-color: #1a1a1a;
 
   h1 {
     margin: 4% 0 4% 0;
@@ -67,7 +67,7 @@ body {
 
 
   .col-md-6 {
-    background-color: #141414;
+    background-color: #1a1a1a;
   }
 
   .card {
@@ -83,11 +83,11 @@ body {
     max-width: 600px;
     margin-top: 1em;
     color: white;
-    background-color: #141414;
+    background-color: #1a1a1a;
     border-radius: 30px;
     //background: #1a1a1a;
-    box-shadow:  9px 9px 18px #0e0e0e,
-    -9px -9px 18px #1a1a1a;
+    box-shadow:  9px 9px 18px #121212,
+    -9px -9px 18px #222222;
 
     //text inside card
     .row {
