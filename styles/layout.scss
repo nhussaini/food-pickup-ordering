@@ -43,14 +43,14 @@
 }
 
 body {
-  background-color: #121212 !important;
+  background-color: #141414 !important;
 
 .menu-container {
   height: 120vh;
   text-align: center;
   color: white;
   //background-color: black;
-  background-color: #121212;
+  background-color: #141414;
 
   h1 {
     margin: 4% 0 4% 0;
@@ -67,28 +67,27 @@ body {
 
 
   .col-md-6 {
-    background-color: #121212;
+    background-color: #141414;
   }
 
   .card {
     display: flex;
     //text-align: center;
     justify-content: center;
+    //align-items: center;
     width: 100%;
-    //margin-right: 0 !important;
+    margin-right: 0 !important;
     margin-left: 5em;
-    margin-right: 7em;
+    //margin-right: 7em;
     margin-bottom: 3em;
     max-width: 600px;
     margin-top: 1em;
     color: white;
-    background-color: #292929;
+    background-color: #141414;
     border-radius: 30px;
     //background: #1a1a1a;
-    background: linear-gradient(45deg, #1c1c1c, #171717);
-    box-shadow:  30px -30px 60px #0c0c0c,
-                 -30px 30px 60px #282828;
-
+    box-shadow:  9px 9px 18px #0e0e0e,
+    -9px -9px 18px #1a1a1a;
 
     //text inside card
     .row {
@@ -118,5 +117,3 @@ body {
   height: 20vh;
   background-color: black;
 }
-
-
