@@ -7,16 +7,28 @@
     <nav class="navbar sticky-top navbar-light bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"> Ultimate Fusion </a>
+        <% if (locals.user) { %>
+          <p style="color:white;">Welcome, <%= user %></p>
+          <div class="button-container">
 
-        <div class="button-container">
+              <a href="/api/orders" class="btn btn-light"> Order Now </a>
 
-          <a href="/api/register" class="btn btn-light"> Register </a>
-          <a href="/api/login" class="btn btn-light"> Login  </a>
+            <form method="POST" action="/api/logout">
+              <button class="btn btn-light" type="submit">Logout</button>
 
-          <form method="POST" action="/api/order">
-            <a href="/api/orders" class="btn btn-light"> Order Now </a>
-          </form>
-        </div>
+            </form>
+          </div>
+
+        <% } else { %>
+          <div class="button-container">
+
+            <a href="/api/register" class="btn btn-light"> Register </a>
+            <a href="/api/login" class="btn btn-light"> Login  </a>
+
+          </div>
+        <% } %>
+
+
 
       </div>
     </nav>
