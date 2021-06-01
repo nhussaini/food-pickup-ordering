@@ -12,12 +12,12 @@ $(document).ready(function() {
   });
 
   $('.minus').click(function() {
-    counter --;
-    $('.counter').val(counter);
-
     if (counter <= 0) {
-      $('#counter').off();
-    };
+      $('.counter').click().off();
+    } else {
+      counter --;
+      $('.counter').val(counter);
+    }
 
   });
 
