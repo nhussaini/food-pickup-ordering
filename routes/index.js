@@ -12,10 +12,14 @@ module.exports = (db) => {
     db.query(`SELECT food.*, users.name as user FROM food, users WHERE users.id = $1;`,[id])
       .then(foodItems => {
         const food = foodItems.rows;
-        //get the single user
-        const user = foodItems.rows[0].user;
-        const templateVars = { food, user };
-        res.render('index', templateVars);
+        if(id){
+          const user = foodItems.rows[0].user;
+          const templateVars = { food, user };
+         res.render('index', templateVars);
+        }
+        const templateVars = {food, user: null};
+        res.render('index',templateVars);
+
       })
       .catch(err => {
         res

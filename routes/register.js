@@ -8,7 +8,11 @@ const saltRounds = 10;
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    const templateVars = {message: ''};
+    // const id = req.session['user_id'];
+    // if(!id) {
+    //   const templateVars= {message: '', user: null};
+    // }
+    const templateVars = {message: '', user: null};
 
     res.render('register', templateVars);
   });
