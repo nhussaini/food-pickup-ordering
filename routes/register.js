@@ -31,7 +31,7 @@ module.exports = (db) => {
        console.log(req.session);
        req.session['user_id'] = user.id;
        //add the user id in the cookie
-       return res.redirect("/")
+       return res.redirect("/api/index");
      }
     );
 
