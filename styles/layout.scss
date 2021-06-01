@@ -34,6 +34,7 @@
     h3 {
       color: white;
       z-index: inherit;
+      padding-top: 2em;
     }
   }
 }
@@ -44,6 +45,7 @@
 
   h1 {
     margin: 4% 0 4% 0;
+    margin-bottom: 0.5em;
   }
 
   ul {
@@ -64,6 +66,7 @@
     margin-right: 7em;
     margin-bottom: 3em;
     max-width: 600px;
+    margin-top: 1em;
     //width: 80%;
     //width: 600px;
 
@@ -81,9 +84,9 @@
       text-align: start;
     }
 
-    .category-title {
-      padding-top: 2em;
-    }
+    // .category-title {
+    //   margin-top: 2em;
+    // }
 
     //price of food
     .card-price {
