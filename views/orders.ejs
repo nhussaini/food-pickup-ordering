@@ -11,7 +11,7 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/public/scripts/order_food_count.js"></script>
+    <script type="text/javascript" src="/scripts/order_food_count.js"></script>
   </head>
 
   <body>
@@ -20,11 +20,11 @@
     <p class="page-title"><strong>Your Order</strong> <i class="fas fa-shopping-cart"></i></p>
 
     <div class="box" id="counter-box">
-      <form>
-        <button class="plus" id="plus"><strong> + </strong></button>
-        <button class="minus" id="minus"><strong> - </strong></button>
+      <form id="counter-form">
+        <button class="plus" id="plus"> <strong> + </strong> </button>
+        <button class="minus" id="minus"> <strong> - </strong> </button>
 
-        <output name="food-counter" class="counter" id="counter">0</output>
+        <output name="food-counter" class="counter" id="counter"> 0 </output>
       </form>
 
         <% for (let items of food) %>
