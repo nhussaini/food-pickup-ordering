@@ -56,13 +56,44 @@
 
   .card {
     display: flex;
-    // text-align: center;
+    //text-align: center;
+    justify-content: center;
     width: 100%;
-    margin-right: 0 !important;
-    margin-left: 6em;
+    //margin-right: 0 !important;
+    margin-left: 5em;
+    margin-right: 7em;
+    margin-bottom: 3em;
+    max-width: 600px;
+    //width: 80%;
+    //width: 600px;
 
+
+    // .card-body {
+    //   margin-right: 7em;
+    // }
+
+
+    // .col-md-6 {
+    //   margin-right: 3em !important;
+    // }
+    //text inside card
     .row {
       text-align: start;
+    }
+
+    .category-title {
+      padding-top: 2em;
+    }
+
+    //price of food
+    .card-price {
+      padding: 0em;
+      float: right;
+    }
+
+    //food decription
+    .card-text {
+      padding-right: 2em;
     }
 
     p {
