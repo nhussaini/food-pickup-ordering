@@ -1,7 +1,7 @@
 --appetizers
 INSERT INTO food (name, type, price, thumbnail_url, description, time) VALUES ('Dumplings', 'Appetizer', 5.99, 'https://thewoksoflife.com/wp-content/uploads/2016/04/chicken-dumplings-6-1-500x399.jpg', '12 Chicken dumplings', 10);
 INSERT INTO food (name, type, price, thumbnail_url, description, time) VALUES ('Plaintain', 'Appetizer', 5.99, 'https://sweetandsorrel.com/wp-content/uploads/2019/11/Plantain-1-1.jpg', '2 ripe, fried plaintains', 10);
-INSERT INTO food (name, type, price, thumbnail_url, description, time) VALUES ('Fried Prosciutto Tortellini', 'Appetizer', 5.99, 'https://i2.wp.com/www.missinthekitchen.com/wp-content/uploads/2016/07/Fried-Tortellini-Recipe-Photo.jpg?resize=640%2C427&ssl=1', '1 bowl', 10);
+INSERT INTO food (name, type, price, thumbnail_url, description, time) VALUES ('Fried Prosciutto Tortellini', 'Appetizer', 5.99, 'https://i2.wp.com/www.missinthekitchen.com/wp-content/uploads/2016/07/Fried-Tortellini-Recipe-Photo.jpg?resize=640%2C427&ssl=1', '1 bowl served with seasoned tomato sauce', 10);
 
 --main dishes
 INSERT INTO food (name, type, price, thumbnail_url, description, time) VALUES ('Fried Cantonese Noodles', 'Main Dish', 12, 'https://omnivorescookbook.com/wp-content/uploads/2020/06/200430_Beef-Pan-Fried-Noodles_550.jpg', 'Cantonese noodles fried with veggies and beef, cooked to perfection', 10);
