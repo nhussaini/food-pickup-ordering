@@ -4,12 +4,17 @@ const router  = express.Router();
 //route for the index page
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM food;`)
+
+    //get the id of the user from session cookie
+    const id = req.session['user_id'];
+
+    //select food  and the current logged in user from database.
+    db.query(`SELECT food.*, users.name as user FROM food, users WHERE users.id = $1;`,[id])
       .then(foodItems => {
         const food = foodItems.rows;
-        console.log('food', food);
-        const templateVars = { food };
-
+        //get the single user
+        const user = foodItems.rows[0].user;
+        const templateVars = { food, user };
         res.render('index', templateVars);
       })
       .catch(err => {

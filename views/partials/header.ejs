@@ -7,6 +7,11 @@
     <nav class="navbar sticky-top navbar-light bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"> Ultimate Fusion </a>
+        <% console.log('user from header partial:',user)%>
+        <% if (user) { %>
+          <p style="color:white;">Welcome, <%= user %></p>
+
+        <% } %>
 
         <div class="button-container">
 
