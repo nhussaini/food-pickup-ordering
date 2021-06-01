@@ -34,6 +34,7 @@
     h3 {
       color: white;
       z-index: inherit;
+      padding-top: 1em;
     }
   }
 }
@@ -41,9 +42,13 @@
 .menu-container {
   height: 120vh;
   text-align: center;
+  color: white;
+  //background-color: black;
+  background-color: #121212;
 
   h1 {
     margin: 4% 0 4% 0;
+    margin-bottom: 0.5em;
   }
 
   ul {
@@ -64,25 +69,19 @@
     margin-right: 7em;
     margin-bottom: 3em;
     max-width: 600px;
-    //width: 80%;
-    //width: 600px;
+    margin-top: 1em;
+    color: white;
+    background-color: #292929;
+    border-radius: 30px;
+    //background: #1a1a1a;
+    background: linear-gradient(45deg, #1c1c1c, #171717);
+    box-shadow:  30px -30px 60px #0c0c0c,
+                 -30px 30px 60px #282828;
+    
 
-
-    // .card-body {
-    //   margin-right: 7em;
-    // }
-
-
-    // .col-md-6 {
-    //   margin-right: 3em !important;
-    // }
     //text inside card
     .row {
       text-align: start;
-    }
-
-    .category-title {
-      padding-top: 2em;
     }
 
     //price of food
