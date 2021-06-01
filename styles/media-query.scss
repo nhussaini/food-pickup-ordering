@@ -1,0 +1,15 @@
+//media queries for screen fit
+
+@media only screen and (min-width: 1024px) {
+  .card {
+    margin-right: 0 !important;
+    margin-left: 0em;
+    display: flex;
+  }
+
+  .col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
