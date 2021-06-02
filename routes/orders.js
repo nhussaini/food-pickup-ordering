@@ -7,13 +7,7 @@ const authToken = envVar.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 
-client.messages
-  .create({
-     body: 'twilio test',
-     from: '+18077906750',
-     to: '+14167320712'
-   })
-  .then(message => console.log(message.sid));
+
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -22,10 +16,22 @@ module.exports = (db) => {
     db.query(`SELECT food.*, users.phone_number FROM food, users WHERE users.id = ${id};`)
       .then((foodItems) => {
         const food = foodItems.rows;
+        const phoneNumber = foodItems.rows[0].phone_number;
         const templateVars = { food };
         res.render("orders", templateVars);
-        console.log('food items', foodItems.rows)
         
+        const message = function () {
+        client.messages
+        .create({
+          body: 'Food is ready for pickup!',
+          from: '+18077906750',
+          to: phoneNumber
+        })
+        .then(message => console.log(message.sid));
+      }
+      setTimeout(message, 5000);
+
+
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
