@@ -7,8 +7,6 @@ const authToken = envVar.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 
-
-
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const id = req.session['user_id'];
