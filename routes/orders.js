@@ -17,6 +17,7 @@ module.exports = (db) => {
       .then((foodItems) => {
         const food = foodItems.rows;
         const phoneNumber = foodItems.rows[0].phone_number;
+        const foodDuration = foodItems.rows[0].time;
         const templateVars = { food };
         res.render("orders", templateVars);
         
@@ -29,7 +30,7 @@ module.exports = (db) => {
         })
         .then(message => console.log(message.sid));
       }
-      setTimeout(message, 5000);
+      setTimeout(message, foodDuration * 1000);
 
 
       })
