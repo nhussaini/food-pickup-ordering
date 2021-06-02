@@ -27,15 +27,10 @@
         <output name="food-counter" class="counter" id="counter"> 0 </output>
       </form>
 
-        <% for (let items of food) %>
+        <% for (let items of food) {%>
 
-          <%= item = food.name %>
-
-      <p>fake data fake datafake datafake datafake datafake datafake datafake datafake data fake data fake datafake datafake datafake datafake datafake datafake datafake data</p>
-      <p>fake data fake datafake datafake datafake datafake datafake datafake datafake data</p>
-      <p>fake data fake datafake datafake datafake datafake datafake datafake datafake data</p>
-      <p>fake data fake datafake datafake datafake datafake datafake datafake datafake data</p>
-
+         <li> <%= items.name %>  </li>
+        <% } %>
       <form action="/" method="POST">
         <button class="submit-order" type="submit"><strong>Submit Order</strong></button>
       </form>

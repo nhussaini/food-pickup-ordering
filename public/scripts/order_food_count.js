@@ -18,7 +18,8 @@ $(document).ready(function() {
       counter --;
       $('.counter').val(counter);
     }
-
   });
+
+
 
 });
