@@ -4,6 +4,7 @@
   .card {
     margin-right: 0 !important;
     margin-left: 0em;
+    width: 100%;
     display: flex;
   }
 
@@ -12,4 +13,9 @@
     justify-content: center;
     align-items: center;
   }
+
+  .col-md-8 {
+    padding-right: 0px 0px 0px 0px;
+  }
+
 }
