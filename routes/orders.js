@@ -1,14 +1,31 @@
 const express = require("express");
 const router = express.Router();
+const dotenv = require('dotenv');
+const envVar = dotenv.config({ path: './.env' })
+const accountSid = envVar.TWILIO_ACCOUNT_SID;
+const authToken = envVar.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+
+client.messages
+  .create({
+     body: 'twilio test',
+     from: '+18077906750',
+     to: '+14167320712'
+   })
+  .then(message => console.log(message.sid));
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM food;`)
+    const id = req.session['user_id'];
+    console.log('id:', id)
+    db.query(`SELECT food.*, users.phone_number FROM food, users WHERE users.id = ${id};`)
       .then((foodItems) => {
         const food = foodItems.rows;
         const templateVars = { food };
-
         res.render("orders", templateVars);
+        console.log('food items', foodItems.rows)
+        
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
