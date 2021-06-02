@@ -20,17 +20,29 @@
     <p class="page-title"><strong>Your Order</strong> <i class="fas fa-shopping-cart"></i></p>
 
     <div class="box" id="counter-box">
-      <form id="counter-form">
-        <button class="plus" id="plus"> <strong> + </strong> </button>
-        <button class="minus" id="minus"> <strong> - </strong> </button>
-
-        <output name="food-counter" class="counter" id="counter"> 0 </output>
-      </form>
 
         <% for (let items of food) {%>
 
-         <li> <%= items.name %>  </li>
+         <li>
+           <%= items.name %>
+
+           <form id="counter-form">
+            <input class="count-button-plus" type="button" name="food-id" value="<%= items.id %> + ">
+
+            <input type="hidden" text="<%= items.id %>" class="id" value="<%= items.id %>" />
+            <input type="hidden" text="<%= items.price %>" class="price" value="<%= items.price %>" />
+            <input type="hidden" text="<%= items.time %>" class="time" value="<%= items.time %>" />
+
+            <input class="count-button-minus" type="button" name="food-id" value="<%= items.id %> - ">
+          </form>
+
+        </li>
         <% } %>
+
+        <div class="cart">
+          <div> </div>
+        </div>
+
       <form action="/" method="POST">
         <button class="submit-order" type="submit"><strong>Submit Order</strong></button>
       </form>
