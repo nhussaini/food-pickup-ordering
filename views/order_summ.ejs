@@ -25,26 +25,34 @@
   <title>Your Order Summary</title>
 </head>
 <body>
+  <% let totalPrice = 0;
+   for (let item of orderSummary) {
+     let indPrice = item.quantity * parseFloat(item.price);
+    totalPrice += indPrice;
+
+     } %>
+     <% console.log('total price', totalPrice) %>
   <div class="menu-container">
     <h1>Your Order</h1>
     <div class="container">
       <div class="row-box">
         <div class="col-md-6">
           <h3 class="category-title">Here is your order summary:</h3>
-          <% for (let item of orderSummary) { %> 
           <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-8">
                 <div class="card-body">
+                  <% for (let item of orderSummary) { %> 
                   <p class="card-quant">Quantity: <%= item.quantity %></p>
                   <p class="card-name"><%= item.food_name %></p>
-                  <p class="card-price">Total: <%= `$${item.price}` %></p>
+                  
+                  <% } %>
+                  <p class="total-price"><%= `Total Amount: $${totalPrice}` %></p>
                 </div>
               </div>
             </div>
           </div>
-          <p class="bottom-text" style="margin-top: 2em;">Thank you for your order! It will be ready in about <%= item.food_time %> minutes. You will recieve a text message when it is ready for pick up. Enjoy your meal 😋</p>
-          <% } %>
+          <p class="bottom-text" style="margin-top: 2em;">Thank you for your order! You will recieve a text message when it is ready for pick up. Enjoy your meal 😋</p>
         </div>
       </div>
 </body>
