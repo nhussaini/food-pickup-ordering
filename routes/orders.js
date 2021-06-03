@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const express = require("express");
 const router = express.Router();
 const format = require('pg-format');
@@ -17,9 +18,8 @@ module.exports = (db) => {
         const food = foodItems.rows;
 
         //generate orderid here pass it through template vars
-        const newOrderId = 1;
 
-        const templateVars = { food, newOrderId };
+        const templateVars = { food };
 
         const phoneNumber = foodItems.rows[0].phone_number;
         const foodDuration = foodItems.rows[0].time;
@@ -43,7 +43,7 @@ module.exports = (db) => {
       });
   });
 
-  router.post("/", (req, res) => {
+  router.post("/", async (req, res) => {
     console.log('req body', req.body);
     // const exampleReqBody = {
     //   '3': { id: '3', price: '5.99', time: '10', qty: '1' },
@@ -53,18 +53,45 @@ module.exports = (db) => {
     // geenerate order id, for each item into the order food table
     // change add order into exampleReqbody
 
+    const order = [
+      req.session['user_id'], 'true',
+      Object.values(req.body).reduce((sum, currentItem) => {
+        return (sum + parseFloat(currentItem.price));
+
+        // console.log('currentItem', parseFloat(currentItem.price));
+        // console.log('sum', sum);
+
+      }, 0)];
+
+    // console.log('orders', order);
+
+    const sql1 = format(`
+      INSERT INTO orders (user_id, order_status, total_price
+      VALUES %L
+      RETURNING id
+    `, [order]);
+
+    console.log(sql1);
+
+    const results = await db.query(sql1, []);
+
+    // console.log('result:', results.rows[0].id);
+    let order_id = results.rows[0].id;
+
     const addOrder = [];
 
     for (let food_id in req.body) {
       const order_food_info = req.body[food_id];
       addOrder.push([
         // order_food_info.order_id,
-        3, //this should become the order id
+       //this should become the order id
+        order_id,
         order_food_info.id,
         order_food_info.qty,
-        order_food_info.price,
+        order_food_info.price
       ]);
     }
+
     const sql = format(`
       INSERT INTO order_food (order_id, food_id, quantity, price)
       VALUES %L

@@ -38,6 +38,13 @@ $(document).ready(function() {
     }
 
     localStorage.setItem('cart', JSON.stringify(parsedCart));
+
+    if (parsedCart[id].qty <= 0) {
+      $('.count-button-minus').prop('disabled', true);
+
+    } else if (parsedCart[id].qty > 0) {
+      $('.count-button-minus').removeAttr('disabled')
+    }
   });
 
   $('.count-button-minus').click(function() {
@@ -63,8 +70,11 @@ $(document).ready(function() {
 
     localStorage.setItem('cart', JSON.stringify(parsedCart));
 
-    if (parsedCart[id].qty < 0) {
-      $('.count-button-minus').click().off();
+    if (parsedCart[id].qty <= 0) {
+      $('.count-button-minus').prop('disabled', true);
+
+    } else if (parsedCart[id].qty > 0) {
+      $('.count-button-minus').removeAttr('disabled')
     }
 
     console.log(parsedCart);
