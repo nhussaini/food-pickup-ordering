@@ -13,7 +13,7 @@ const client = require('twilio')(accountSid, authToken);
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const id = req.session['user_id'];
-    console.log('id:', id);
+    //console.log('id:', id);
     db.query(`SELECT food.*, users.phone_number FROM food, users WHERE users.id = ${id};`)
       .then((foodItems) => {
         const food = foodItems.rows;
@@ -93,18 +93,22 @@ module.exports = (db) => {
       INSERT INTO order_food (order_id, food_id, quantity, price)
       VALUES %L
     `, addOrder);
-
+    
     console.log(sql);
-
+    
     return db
       .query(sql, [])
       .then((results) => {
         console.log('results', results);
+        
+
+        return res.redirect("/api/summary");
         // results.rows[0];
         res.json({text: 'hi'});
-        // res.redirect("/api/order_summary") -> redirect to orders page
-
       });
+    
+
+      
   });
   return router;
 };

@@ -94,7 +94,8 @@ $(document).ready(function() {
       data: JSON.parse(localStorage.getItem('cart'))
     })
       .then((res) => {
-        console.log('success', res);
+        console.log('res:', res)
+        window.location.pathname = '/api/summary'
       });
 
   });
