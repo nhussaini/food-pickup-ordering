@@ -37,6 +37,7 @@
       color: white;
       z-index: inherit;
       padding-top: 1em;
+      font-size: 25px;
     }
   }
 }
@@ -53,6 +54,13 @@ body {
     h1 {
       margin: 4% 0 4% 0;
       margin-bottom: 0.5em;
+      padding-top: 2em;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-top: 0.5em;
+      padding-bottom: 0.5em;
     }
 
     ul {
@@ -95,10 +103,13 @@ body {
       //price of food
       .card-price {
         padding-top: 2em;
-        float: right;
-        text-align: center;
+        display: flex;
+        justify-content: center;
       }
 
+      .bottom-text {
+        margin-top: 1em;
+      }
      
 
       p {

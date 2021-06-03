@@ -8,7 +8,7 @@ module.exports = (db) => {
     const id = req.session['user_id'];
 
     //select food  and the current logged in user from database.
-    db.query(`SELECT order_food.*, food.name as food_name FROM order_food JOIN food ON food_id = food.id WHERE order_food.id = 1;`)
+    db.query(`SELECT order_food.*, food.name as food_name, food.time as food_time FROM order_food JOIN food ON food_id = food.id WHERE order_food.id = 1;`)
       .then(foodOrders => {
         const orderSummary = foodOrders.rows;
         console.log('order summ:', orderSummary)
