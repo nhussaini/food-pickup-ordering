@@ -17,23 +17,24 @@
   <body>
     <!-- <%-include('partials/header') %> -->
 
-    <p class="page-title"><strong>Your Order</strong> <i class="fas fa-shopping-cart"></i></p>
+    <p class="page-title"><strong> Your Order Number: <%= newOrderId %>  </strong> <i class="fas fa-shopping-cart"></i></p>
 
     <div class="box" id="counter-box">
 
-        <% for (let items of food) {%>
+        <% for (let items of food) { %>
 
          <li>
            <%= items.name %>
 
            <form id="counter-form">
-            <input class="count-button-plus" type="button" name="food-id" value="<%= items.id %> + ">
+
+            <input class="count-button-plus" type="button" name="food-id" value=" + ">
             <input type="hidden" text="<%= items.id %>" class="id" value="<%= items.id %>" />
             <input type="hidden" text="<%= items.price %>" class="price" value="<%= items.price %>" />
             <input type="hidden" text="<%= items.time %>" class="time" value="<%= items.time %>" />
 
 
-            <input class="count-button-minus" type="button" name="food-id" value="<%= items.id %> - ">
+            <input class="count-button-minus" type="button" name="food-id" value=" - ">
             <input type="hidden" text="<%= items.id %>" class="id2" value="<%= items.id %>" />
             <input type="hidden" text="<%= items.price %>" class="price2" value="<%= items.price %>" />
             <input type="hidden" text="<%= items.time %>" class="time2" value="<%= items.time %>" />

@@ -6,7 +6,6 @@ if (!cart) {
   localStorage.setItem('cart', JSON.stringify({}));
 }
 
-
 $(document).ready(function() {
 
   $('#counter-form').submit((event) => {
@@ -63,6 +62,11 @@ $(document).ready(function() {
     }
 
     localStorage.setItem('cart', JSON.stringify(parsedCart));
+
+    if (parsedCart[id].qty < 0) {
+      $('.count-button-minus').click().off();
+    }
+
     console.log(parsedCart);
   });
 
@@ -73,6 +77,10 @@ $(document).ready(function() {
   $('.submit-order').click(function() {
 
     console.log('local storage cart', localStorage.getItem('cart'));
+
+    $('.newOrderId').val()++;
+
+    console.log($('.newOrderId').val()++);
 
     $.ajax({
       type: 'POST',

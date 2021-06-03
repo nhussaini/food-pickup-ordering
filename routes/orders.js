@@ -7,9 +7,11 @@ module.exports = (db) => {
     db.query(`SELECT * FROM food;`)
       .then((foodItems) => {
         const food = foodItems.rows;
-        const templateVars = { food };
 
         //generate orderid here pass it through template vars
+        const newOrderId = 1;
+
+        const templateVars = { food, newOrderId };
 
         res.render("orders", templateVars);
       })
@@ -20,22 +22,15 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
     console.log('req body', req.body);
-    const exampleReqBody = {
-      '3': { id: '3', price: '5.99', time: '10', qty: '1' },
-      '4': { id: '4', price: '12', time: '10', qty: '1' }
-    }
+    // const exampleReqBody = {
+    //   '3': { id: '3', price: '5.99', time: '10', qty: '1' },
+    //   '4': { id: '4', price: '12', time: '10', qty: '1' }
+    // }
 
     // geenerate order id, for each item into the order food table
     // change add order into exampleReqbody
 
     const addOrder = [];
-
-    // const addOrder = [
-    //   req.body.order_id,
-    //   req.body.food_id,
-    //   req.body.quantity,
-    //   req.body.price,
-    // ];
 
     for (let food_id in req.body) {
       const order_food_info = req.body[food_id];
@@ -48,8 +43,8 @@ module.exports = (db) => {
       ]);
     }
     const sql = format(`
-    INSERT INTO order_food (order_id, food_id, quantity, price)
-    VALUES %L
+      INSERT INTO order_food (order_id, food_id, quantity, price)
+      VALUES %L
     `, addOrder);
 
     console.log(sql);
@@ -60,7 +55,7 @@ module.exports = (db) => {
         console.log('results', results);
         // results.rows[0];
         res.json({text: 'hi'});
-        // res.redirect() -> redirect to orders page
+        // res.redirect("/api/order_summary") -> redirect to orders page
 
       });
   });
