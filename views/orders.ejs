@@ -17,28 +17,40 @@
   <body>
     <!-- <%-include('partials/header') %> -->
 
-    <p class="page-title"><strong>Your Order</strong> <i class="fas fa-shopping-cart"></i></p>
+    <p class="page-title"><strong> Your Order: </strong> <i class="fas fa-shopping-cart"></i></p>
 
     <div class="box" id="counter-box">
-      <form id="counter-form">
-        <button class="plus" id="plus"> <strong> + </strong> </button>
-        <button class="minus" id="minus"> <strong> - </strong> </button>
 
-        <output name="food-counter" class="counter" id="counter"> 0 </output>
-      </form>
+        <% for (let items of food) { %>
 
-        <% for (let items of food) %>
+         <li>
+           <%= items.name %>
 
-          <%= item = food.name %>
+           <form id="counter-form">
 
-      <p>fake data fake datafake datafake datafake datafake datafake datafake datafake data fake data fake datafake datafake datafake datafake datafake datafake datafake data</p>
-      <p>fake data fake datafake datafake datafake datafake datafake datafake datafake data</p>
-      <p>fake data fake datafake datafake datafake datafake datafake datafake datafake data</p>
-      <p>fake data fake datafake datafake datafake datafake datafake datafake datafake data</p>
+            <input class="count-button-plus" type="button" name="food-id" value=" + ">
+            <input type="hidden" text="<%= items.id %>" class="id" value="<%= items.id %>" />
+            <input type="hidden" text="<%= items.price %>" class="price" value="<%= items.price %>" />
+            <input type="hidden" text="<%= items.time %>" class="time" value="<%= items.time %>" />
 
-      <form action="/" method="POST">
+
+            <input class="count-button-minus" type="button" name="food-id" value=" - ">
+            <input type="hidden" text="<%= items.id %>" class="id2" value="<%= items.id %>" />
+            <input type="hidden" text="<%= items.price %>" class="price2" value="<%= items.price %>" />
+            <input type="hidden" text="<%= items.time %>" class="time2" value="<%= items.time %>" />
+
+          </form>
+
+        </li>
+        <% } %>
+
+        <div class="cart">
+          <div> </div>
+        </div>
+
+      <!-- <form action="/api/orders" method="POST"> -->
         <button class="submit-order" type="submit"><strong>Submit Order</strong></button>
-      </form>
+      <!-- </form> -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
