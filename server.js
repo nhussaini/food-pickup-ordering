@@ -49,7 +49,7 @@ const indexRoutes = require("./routes/index");
 const registerRoutes = require("./routes/register");
 const ordersRoutes = require("./routes/orders");
 const logoutRoutes = require("./routes/logout");
-
+const orderSummaryRoutes = require("./routes/order_summ");
 
 
 // Mount all resource routes
@@ -60,6 +60,7 @@ app.use("/api/index", indexRoutes(db));
 app.use("/api/register", registerRoutes(db));
 app.use("/api/orders", ordersRoutes(db));
 app.use("/api/logout", logoutRoutes(db));
+app.use("/api/summary", orderSummaryRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
