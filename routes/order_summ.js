@@ -7,13 +7,11 @@ module.exports = (db) => {
     //get the id of the user from session cookie
     const id = req.session['user_id'];
 
-    //select food  and the current logged in user from database.
-    db.query(`SELECT order_food.*, food.name as food_name, food.time as food_time FROM order_food JOIN food ON food_id = food.id WHERE order_food.id = 1;`)
+    db.query(`SELECT food.name as food_name, order_food.quantity, order_food.price FROM order_food JOIN food ON food.id = food_id WHERE order_food.order_id = 5;`)
       .then(foodOrders => {
         const orderSummary = foodOrders.rows;
         console.log('order summ:', orderSummary)
         if(id){
-          //const user = foodOrders.rows[0].user;
           const templateVars = { orderSummary };
          res.render('order_summ', templateVars);
         }
