@@ -39,15 +39,17 @@ $(document).ready(function() {
     }
 
     localStorage.setItem('cart', JSON.stringify(parsedCart));
-
-    console.log(localStorage);
-    console.log(parsedCart);
-
   });
 
   $('.count-button-minus').click(function() {
 
-    const id = $('.id').val();
+    const $id2 = $(this).next();
+    const $price2 = $id2.next();
+    const $time2 = $price2.next();
+
+    const id = $id2.val();
+    const price = $price2.val();
+    const time = $time2.val();
 
     const cart1 = localStorage.getItem('cart');
 
@@ -60,20 +62,26 @@ $(document).ready(function() {
       parsedCart[id].qty --;
     }
 
+    localStorage.setItem('cart', JSON.stringify(parsedCart));
     console.log(parsedCart);
   });
 
+  $('.submit-order').click(function(event) {
+    event.preventDefault();
+  });
 
   $('.submit-order').click(function() {
 
-    const cart1 = localStorage.getItem('cart');
+    console.log('local storage cart', localStorage.getItem('cart'));
 
     $.ajax({
       type: 'POST',
       url: '/api/orders',
-      dataType: 'JSON'
+      data: JSON.parse(localStorage.getItem('cart'))
     })
-      .then();
+      .then((res) => {
+        console.log('success', res);
+      });
 
   });
 
