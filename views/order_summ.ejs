@@ -36,13 +36,14 @@
             <div class="row g-0">
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title"><%= item.quantity %> <%= item.food_name %></h5>
+                  <p class="card-quant">Quantity: <%= item.quantity %></p>
+                  <p class="card-name"><%= item.food_name %></p>
                   <p class="card-price">Total: <%= `$${item.price}` %></p>
                 </div>
               </div>
             </div>
           </div>
-          <p class="bottom-text" style="margin-top: 2em;">Thank you for your order! It will be ready in <%= item.food_time %> minutes. You will recieve a text message when it is ready for pick up. Enjoy your meal 😋</p>
+          <p class="bottom-text" style="margin-top: 2em;">Thank you for your order! It will be ready in about <%= item.food_time %> minutes. You will recieve a text message when it is ready for pick up. Enjoy your meal 😋</p>
           <% } %>
         </div>
       </div>

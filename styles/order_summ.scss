@@ -96,7 +96,7 @@ body {
         margin: 0 auto;
       }
 
-      .card-title {
+      .card-name {
         padding-top: 1em;
       }
 
@@ -107,15 +107,21 @@ body {
         justify-content: center;
       }
 
+      .card-quant {
+        padding: 0em;
+        float: right;
+        padding-top: 1em
+      }
+
       .bottom-text {
         margin-top: 1em;
       }
      
 
-      p {
-        display: flex;
-        flex-direction: row;
-      }
+      // p {
+      //   display: flex;
+      //   flex-direction: row;
+      // }
     }
   }
 }
