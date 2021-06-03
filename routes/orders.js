@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable camelcase */
 const express = require("express");
 const router = express.Router();
@@ -33,7 +34,7 @@ module.exports = (db) => {
           to: phoneNumber
         })
         .then(message => console.log(message.sid));
-      }
+      };
       setTimeout(message, foodDuration * 1000);
 
 
@@ -57,16 +58,12 @@ module.exports = (db) => {
       req.session['user_id'], 'true',
       Object.values(req.body).reduce((sum, currentItem) => {
         return (sum + parseFloat(currentItem.price));
-
-        // console.log('currentItem', parseFloat(currentItem.price));
-        // console.log('sum', sum);
-
       }, 0)];
 
     // console.log('orders', order);
 
     const sql1 = format(`
-      INSERT INTO orders (user_id, order_status, total_price
+      INSERT INTO orders (user_id, order_status, total_price)
       VALUES %L
       RETURNING id
     `, [order]);

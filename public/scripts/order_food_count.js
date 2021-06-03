@@ -43,7 +43,7 @@ $(document).ready(function() {
       $('.count-button-minus').prop('disabled', true);
 
     } else if (parsedCart[id].qty > 0) {
-      $('.count-button-minus').removeAttr('disabled')
+      $('.count-button-minus').removeAttr('disabled');
     }
   });
 
@@ -87,10 +87,6 @@ $(document).ready(function() {
   $('.submit-order').click(function() {
 
     console.log('local storage cart', localStorage.getItem('cart'));
-
-    $('.newOrderId').val()++;
-
-    console.log($('.newOrderId').val()++);
 
     $.ajax({
       type: 'POST',
