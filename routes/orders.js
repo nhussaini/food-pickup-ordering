@@ -44,8 +44,13 @@ module.exports = (db) => {
       });
   });
 
-  router.post("/", async (req, res) => {
+  router.post("/", (req, res) => {
     console.log('req body', req.body);
+    
+    //res.end('hello');
+   res.redirect('/api/summary/');
+    
+
     // const exampleReqBody = {
     //   '3': { id: '3', price: '5.99', time: '10', qty: '1' },
     //   '4': { id: '4', price: '12', time: '10', qty: '1' }
@@ -54,13 +59,19 @@ module.exports = (db) => {
     // geenerate order id, for each item into the order food table
     // change add order into exampleReqbody
 
-    const order = [
-      req.session['user_id'], 'true',
-      Object.values(req.body).reduce((sum, currentItem) => {
-        return (sum + parseFloat(currentItem.price));
-      }, 0)];
+    // const order = [
+    //   req.session['user_id'], 'true',
+    //   Object.values(req.body).reduce((sum, currentItem) => {
+    //     return (currentItem.price)
+    //     //return (sum + parseFloat(currentItem.price));
+    //   }, 0)];
 
-    // console.log('orders', order);
+    const order = [
+      req.session["user_id"], "true",
+      
+    ]
+
+   console.log('orders', order);
 
     const sql1 = format(`
       INSERT INTO orders (user_id, order_status, total_price)
@@ -70,10 +81,11 @@ module.exports = (db) => {
 
     console.log(sql1);
 
-    const results = await db.query(sql1, []);
+    const results = db.query(sql1, []);
 
     // console.log('result:', results.rows[0].id);
     let order_id = results.rows[0].id;
+    console.log(order_id)
 
     const addOrder = [];
 
@@ -95,6 +107,7 @@ module.exports = (db) => {
     `, addOrder);
     
     console.log(sql);
+    return;
     
     return db
       .query(sql, [])
@@ -102,7 +115,7 @@ module.exports = (db) => {
         console.log('results', results);
         
 
-        return res.redirect("/api/summary");
+        //return res.redirect("/api/summary");
         // results.rows[0];
         res.json({text: 'hi'});
       });

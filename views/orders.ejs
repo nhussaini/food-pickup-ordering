@@ -20,37 +20,36 @@
     <p class="page-title"><strong> Your Order: </strong> <i class="fas fa-shopping-cart"></i></p>
 
     <div class="box" id="counter-box">
-
-        <% for (let items of food) { %>
-
-         <li>
-           <%= items.name %>
-
-           <form id="counter-form">
-
-            <input class="count-button-plus" type="button" name="food-id" value=" + ">
-            <input type="hidden" text="<%= items.id %>" class="id" value="<%= items.id %>" />
-            <input type="hidden" text="<%= items.price %>" class="price" value="<%= items.price %>" />
-            <input type="hidden" text="<%= items.time %>" class="time" value="<%= items.time %>" />
-
-
+      <% for (let items of food) { %>
+        <li>
+          <%= items.name %>
+          
+          <div>
+            
             <input class="count-button-minus" type="button" name="food-id" value=" - ">
-            <input type="hidden" text="<%= items.id %>" class="id2" value="<%= items.id %>" />
-            <input type="hidden" text="<%= items.price %>" class="price2" value="<%= items.price %>" />
+            <input class="count-button-plus" type="button" name="food-id" value=" + ">
+            <input  type="hidden" text="<%= items.id %>" class="id" value="<%= items.id %>" />
+            <input  type="text" text="<%= items.price %>" class="price" value="<%= items.price %>" />
+            <input  type="hidden" text="<%= items.time %>" class="time" value="<%= items.time %>" />
+            
+            
+            <input  text="<%= items.id %>" class="id2" value="<%= items.id %>" />
+            <input  type="hidden" text="<%= items.price %>" class="price2" value="<%= items.price %>" />
             <input type="hidden" text="<%= items.time %>" class="time2" value="<%= items.time %>" />
-
-          </form>
-
+            
+          </div>
+          
         </li>
         <% } %>
-
-        <div class="cart">
-          <div> </div>
-        </div>
-
+        
+    
+        
+        <form class="submit-order" method="POST">
+          <input type="hidden" name="cart" id="cart"/>
       <!-- <form action="/api/orders" method="POST"> -->
-        <button class="submit-order" type="submit"><strong>Submit Order</strong></button>
+        <button class="submit-order" type="submit" action="/api/orders"><strong>Submit Order</strong></button>
       <!-- </form> -->
+    </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

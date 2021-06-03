@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 
+//const format = require("pg-format");
+
 const cart = localStorage.getItem("cart");
 
 if (!cart) {
@@ -81,10 +83,16 @@ $(document).ready(function() {
   });
 
   $('.submit-order').click(function(event) {
+
     event.preventDefault();
+    data = $('#cart')
+    const cart = localStorage.getItem('cart');
+    data.val(cart)
+    $(".submit-order").submit()
   });
 
-  $('.submit-order').click(function() {
+
+  $('.submit-order1').click(function() {
 
     console.log('local storage cart', localStorage.getItem('cart'));
 
@@ -95,7 +103,7 @@ $(document).ready(function() {
     })
       .then((res) => {
         console.log('res:', res)
-        window.location.pathname = '/api/summary'
+        //window.location.pathname = '/api/summary'
       });
 
   });
