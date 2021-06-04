@@ -1,7 +1,10 @@
 // styling for order page
+* {
+  font-family: "Rakkas", cursive;
+}
 
 body {
-  background-color: black;
+  background-color: #1a1a1a;
 
   .page-title {
     color: white;
@@ -15,14 +18,18 @@ body {
   }
 
   .box {
-    background-color: rgb(245, 244, 224);
-    border-radius: 40px;
+    // background-color: rgb(245, 244, 224);
+    // border-radius: 40px;
     width: 80%;
     margin: 0 auto;
     padding-top: 2em;
     padding-bottom: 1.5em;
     padding-right: 2em;
     padding-left: 3em;
+    color: white;
+    background-color: #1a1a1a;
+    border-radius: 30px;
+    box-shadow: 9px 9px 18px #121212, -9px -9px 18px #222222;
   }
 
   p {
@@ -73,6 +80,7 @@ body {
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    width: 30%;
     margin: auto;
   }
 

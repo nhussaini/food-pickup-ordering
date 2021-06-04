@@ -1,13 +1,16 @@
-.header {
 
   .navbar {
     display: flex;
-
-    .navbar-brand {
-      color: white;
-    }
   }
-}
+
+  .title {
+    font-size: 25px;
+    color: white;
+  }
+
+  .btn {
+    margin-right: 1em;
+  }
 
 .button-container {
   display: flex;
