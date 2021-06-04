@@ -6,11 +6,21 @@
       href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap"
       rel="stylesheet"
     />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/orders.css" type="text/css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+      integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+      crossorigin="anonymous"
+    />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -18,43 +28,83 @@
   </head>
 
   <body>
-    <!-- <%-include('partials/header') %> -->
 
-    <p class="page-title"><strong> Your Order </strong> <i class="fas fa-shopping-cart"></i></p>
+    <p class="page-title">
+      <strong> Your Order </strong> <i class="fas fa-shopping-cart"></i>
+    </p>
 
     <div class="box" id="counter-box">
       <% for (let items of food) { %>
-        <li class="list">
-          <%= items.name %>
-          
-          <div>
-            
-            <input class="count-button-minus" type="button" name="food-id" value=" - ">
-            <input class="count-button-plus" type="button" name="food-id" value=" + ">
+      <li class="list">
+        <%= items.name %>
 
-            <input  type="hidden" text="<%= items.id %>" class="id" value="<%= items.id %>" />
-            <input  type="hidden" text="<%= items.price %>" class="price" value="<%= items.price %>" />
-            <input  type="hidden" text="<%= items.time %>" class="time" value="<%= items.time %>" />
-          
-            <input  type="hidden" text="<%= items.id %>" class="id2" value="<%= items.id %>" />
-            <input  type="hidden" text="<%= items.price %>" class="price2" value="<%= items.price %>" />
-            <input type="hidden" text="<%= items.time %>" class="time2" value="<%= items.time %>" />
-            
-          </div>
-          
-        </li>
-        <% } %>
-        
-    
-        
-        <form class="submit-order-form" method="POST">
-          <input type="hidden" name="cart" id="cart"/>
-      <!-- <form action="/api/orders" method="POST"> -->
-        <button type="submit" action="/api/orders" class="btn btn-light"><strong>Submit Order</strong></button>
-      <!-- </form> -->
-    </form>
+        <div>
+          <input
+            class="count-button-minus"
+            type="button"
+            name="food-id"
+            value=" - "
+          />
+          <input
+            class="count-button-plus"
+            type="button"
+            name="food-id"
+            value=" + "
+          />
+
+          <input
+            type="hidden"
+            text="<%= items.id %>"
+            class="id"
+            value="<%= items.id %>"
+          />
+          <input
+            type="hidden"
+            text="<%= items.price %>"
+            class="price"
+            value="<%= items.price %>"
+          />
+          <input
+            type="hidden"
+            text="<%= items.time %>"
+            class="time"
+            value="<%= items.time %>"
+          />
+
+          <input
+            type="hidden"
+            text="<%= items.id %>"
+            class="id2"
+            value="<%= items.id %>"
+          />
+          <input
+            type="hidden"
+            text="<%= items.price %>"
+            class="price2"
+            value="<%= items.price %>"
+          />
+          <input
+            type="hidden"
+            text="<%= items.time %>"
+            class="time2"
+            value="<%= items.time %>"
+          />
+        </div>
+      </li>
+      <% } %>
+
+      <form class="submit-order-form" method="POST">
+        <input type="hidden" name="cart" id="cart" />
+        <button type="submit" action="/api/orders" class="btn btn-light">
+          <strong>Submit Order</strong>
+        </button>
+      </form>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

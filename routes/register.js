@@ -1,45 +1,37 @@
-const express = require('express');
-const router  = express.Router();
-const bcrypt = require('bcryptjs');
+const express = require("express");
+const router = express.Router();
+const bcrypt = require("bcryptjs");
 
 const saltRounds = 10;
 
-
-
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    // const id = req.session['user_id'];
-    // if(!id) {
-    //   const templateVars= {message: '', user: null};
-    // }
-    const templateVars = {message: '', user: null};
+    const templateVars = { message: "", user: null };
 
-    res.render('register', templateVars);
+    res.render("register", templateVars);
   });
 
   router.post("/", (req, res) => {
-    //console.log(req.body)
-    //const addUser = [req.body.name, req.body.email, req.body.password, req.body.phone_number];
-    const { name, email, password, phone_number} = req.body;
+    const { name, email, password, phone_number } = req.body;
     const hashedPassword = bcrypt.hashSync(password, saltRounds);
     let params = [name, email, hashedPassword, phone_number];
 
-    return db.query(`
+    return db
+      .query(
+        `
       INSERT INTO users (name, email, password, phone_number)
       VALUES ($1, $2, $3, $4)
       RETURNING *;
-      `, params)
-     .then (data => {
-       const user = data.rows[0];
-       console.log(user);
-       console.log(req.session);
-       req.session['user_id'] = user.id;
-       //add the user id in the cookie
-       return res.redirect("/api/index");
-     }
-    );
-
+      `,
+        params
+      )
+      .then((data) => {
+        const user = data.rows[0];
+        console.log(user);
+        console.log(req.session);
+        req.session["user_id"] = user.id;
+        return res.redirect("/api/index");
+      });
   });
-
   return router;
 };

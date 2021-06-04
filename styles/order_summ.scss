@@ -1,45 +1,7 @@
+//order summary page styling
 * {
   font-family: "Rakkas", cursive;
   margin: 0 auto;
-}
-
-.hero-header {
-  height: 70vh;
-  width: 100%;
-  background-image: url("/images/background-img.jpeg");
-  background-size: cover;
-
-  .hero-header-overlay {
-    width: 100%;
-    height: inherit;
-    background: #000;
-    opacity: 0.45;
-    position: absolute;
-    z-index: 1;
-  }
-
-  .hero-header-text {
-    height: inherit;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-
-    h1 {
-      color: white;
-      font-size: 65px;
-      z-index: inherit;
-    }
-
-    h3 {
-      color: white;
-      z-index: inherit;
-      padding-top: 1em;
-      font-size: 25px;
-    }
-  }
 }
 
 body {
@@ -86,7 +48,6 @@ body {
       border-radius: 30px;
       box-shadow: 9px 9px 18px #121212, -9px -9px 18px #222222;
 
-      //text inside card
       .row {
         text-align: start;
         padding-right: 2em;
@@ -103,7 +64,7 @@ body {
       .card-quant {
         padding: 0em;
         float: right;
-        padding-top: 1em
+        padding-top: 1em;
       }
 
       .total-price {
@@ -115,15 +76,14 @@ body {
       .bottom-text {
         margin-top: 1em;
       }
-
-      
     }
+
     a {
       margin-bottom: 1em;
       margin-top: 1em;
     }
 
-    a:hover{
+    a:hover {
       background-color: rgb(219, 217, 166);
       color: black;
     }

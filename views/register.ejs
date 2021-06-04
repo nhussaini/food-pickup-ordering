@@ -7,7 +7,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"/>
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -17,7 +18,6 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
   <body>
-    <!-- <%-include('partials/header') %> -->
     <h1>Register with <i>Ultimate Fusion</i></h1>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -34,10 +34,18 @@
           <input type="text" placeholder="Enter email..." name="email" />
 
           <label class="label-password" for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password..." name="password" />
+          <input
+            type="password"
+            placeholder="Enter Password..."
+            name="password"
+          />
 
           <label class="label-number" for="number"><b>Phone Number</b></label>
-          <input type="text" placeholder="Enter phone number..." name="phone_number" />
+          <input
+            type="text"
+            placeholder="Enter phone number..."
+            name="phone_number"
+          />
           <button type="submit"><strong>Register</strong></button>
           <div><%= message%></div>
         </form>

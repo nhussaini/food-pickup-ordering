@@ -1,4 +1,4 @@
-
+//styling for register page
 body {
   background-color: black;
 
@@ -8,7 +8,7 @@ body {
     color: #ffffff;
   }
 
-// beige box
+  //box that holds forms
   .box {
     background-color: rgb(245, 244, 224);
     border-radius: 40px;
@@ -35,7 +35,6 @@ body {
     
     .label-email {
       color: black;
-      // margin-top: 0.5em;
     }
 
     .label-password {
