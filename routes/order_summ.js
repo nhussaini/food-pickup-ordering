@@ -7,7 +7,7 @@ module.exports = (db) => {
     //get the id of the user from session cookie
     const id = req.session['user_id'];
 
-    db.query(`SELECT food.name as food_name, order_food.quantity, order_food.price FROM order_food JOIN food ON food.id = food_id WHERE order_food.order_id = 5;`)
+    db.query(`SELECT food.name as food_name, order_food.quantity, order_food.price FROM order_food JOIN food ON food.id = food_id WHERE order_food.order_id = ${id};`)
       .then(foodOrders => {
         const orderSummary = foodOrders.rows;
         console.log('order summ:', orderSummary)

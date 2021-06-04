@@ -65,10 +65,16 @@ module.exports = (db) => {
     //     return (currentItem.price)
     //     //return (sum + parseFloat(currentItem.price));
     //   }, 0)];
+    
+
+  //   let totalPrice = 0;
+  //  for (let item of orderSummary) {
+  //    let indPrice = item.quantity * parseFloat(item.price);
+  //   totalPrice += indPrice;
+  //    }
 
     const order = [
-      req.session["user_id"], "true",
-      
+      req.session["user_id"], "true", 10
     ]
 
    console.log('orders', order);
@@ -81,8 +87,13 @@ module.exports = (db) => {
 
     console.log(sql1);
 
-    const results = db.query(sql1, []);
-
+    const results = db.query(sql1, [])
+    .then(results => {
+      console.log('results', results.rows[0].id
+      
+    )})
+   
+    
     // console.log('result:', results.rows[0].id);
     let order_id = results.rows[0].id;
     console.log(order_id)
