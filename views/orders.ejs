@@ -20,23 +20,23 @@
   <body>
     <!-- <%-include('partials/header') %> -->
 
-    <p class="page-title"><strong> Your Order: </strong> <i class="fas fa-shopping-cart"></i></p>
+    <p class="page-title"><strong> Your Order </strong> <i class="fas fa-shopping-cart"></i></p>
 
     <div class="box" id="counter-box">
       <% for (let items of food) { %>
-        <li>
+        <li class="list">
           <%= items.name %>
           
           <div>
             
             <input class="count-button-minus" type="button" name="food-id" value=" - ">
             <input class="count-button-plus" type="button" name="food-id" value=" + ">
+
             <input  type="hidden" text="<%= items.id %>" class="id" value="<%= items.id %>" />
-            <input  type="text" text="<%= items.price %>" class="price" value="<%= items.price %>" />
+            <input  type="hidden" text="<%= items.price %>" class="price" value="<%= items.price %>" />
             <input  type="hidden" text="<%= items.time %>" class="time" value="<%= items.time %>" />
-            
-            
-            <input  text="<%= items.id %>" class="id2" value="<%= items.id %>" />
+          
+            <input  type="hidden" text="<%= items.id %>" class="id2" value="<%= items.id %>" />
             <input  type="hidden" text="<%= items.price %>" class="price2" value="<%= items.price %>" />
             <input type="hidden" text="<%= items.time %>" class="time2" value="<%= items.time %>" />
             
@@ -47,10 +47,10 @@
         
     
         
-        <form class="submit-order" method="POST">
+        <form class="submit-order-form" method="POST">
           <input type="hidden" name="cart" id="cart"/>
       <!-- <form action="/api/orders" method="POST"> -->
-        <button class="submit-order" type="submit" action="/api/orders"><strong>Submit Order</strong></button>
+        <button type="submit" action="/api/orders" class="btn btn-light"><strong>Submit Order</strong></button>
       <!-- </form> -->
     </form>
     </div>
